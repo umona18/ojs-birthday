@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: hsl(77, 5%, 72%);
+  color: hsl(46, 65%, 52%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.countdown-container {
+  text-align: center;
+  background-color: hsl(60, 28%, 30%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+input[type="date"] {
+  padding: 8px;
+  font-size: 16px;
+}
+
+button {
+  background-color: hsl(82, 39%, 54%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hsl(82, 36%, 90%);
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-item {
+  margin: 10px;
+  font-size: 32px;
+  flex: 1;
+  text-align: center;
+}
+
+.countdown-item span {
+  font-size: 48px;
+  font-weight: bold;
+  color: hsl(46, 65%, 52%);
+}
+
+.container {
+  width: 100vw;
+}
+
+.confetti {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  border-radius: 0%;
+}
+
+.confetti--animation-slow {
+  animation: confetti-slow 2.25s linear 1 forwards;
+}
+.confetti--animation-medium {
+  animation: confetti-medium 1.75s linear 1 forwards;
+}
+.confetti--animation-fast {
+  animation: confetti-fast 1.25s linear 1 forwards;
+}
+
+@keyframes confetti-slow {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+  }
+  100% {
+    transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
+  }
+}
+@keyframes confetti-medium {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+  }
+  100% {
+    transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg);
+  }
+}
+@keyframes confetti-fast {
+  0% {
+    transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+  }
+  100% {
+    transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+  .countdown-item {
+      font-size: 24px;
+  }
+
+  .countdown-item span {
+      font-size: 40px;
+  }
+}
